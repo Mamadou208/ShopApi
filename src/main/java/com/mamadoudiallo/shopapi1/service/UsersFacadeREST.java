@@ -75,6 +75,17 @@ public class UsersFacadeREST extends AbstractFacade<Users> {
     }
 
     @GET
+    @Path("{email}")
+    @Produces(
+    {
+        "application/json"
+    })
+    public Users find(@PathParam("email") String email)
+    {
+        return super.findByEmail(email);
+    }
+  
+    @GET
     @Override
     @Produces(
     {

@@ -41,6 +41,11 @@ public abstract class AbstractFacade<T> {
     {
         return getEntityManager().find(entityClass, id);
     }
+    
+    public T findByEmail(Object email)
+    {
+        return getEntityManager().find(entityClass, email);
+    }
 
     public List<T> findAll()
     {
